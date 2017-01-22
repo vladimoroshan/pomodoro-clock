@@ -1,6 +1,8 @@
 # Pomodoro-Clock-
 ===
 
+Try on [codepen](http://codepen.io/Moroshan/full/xgEqQo/)
+
 ##What this project is
 
 > The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. -from Wikipedia's article
@@ -12,7 +14,7 @@ Here’s the **basic layout**:
 In the head links to google fonts and sound for Pomodoro clock when time is up. 
 
 ===
-```
+```html
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +58,7 @@ In the head links to google fonts and sound for Pomodoro clock when time is up.
 Here is @media queries to make font-size and round button smaller. In the rest are a scalable units, like em, vw, vh and %. So my clock pretty responsive on any screen. Also remarkable features are css pseudo classes, :active, :not().
 
 ---
-```
+```css
 
 body {   
   margin: 0px;  
@@ -175,10 +177,16 @@ I created a Pomodoro **object constructor** with some properties and then added 
 
 Maybe it would be easy to handle logic with jQuery. But as I said only pure javascript.
 
+I added pause button, though... 
+
+>In the book the author says clearly A Pomodoro is indivisible. Actually is the first rule of the Pomodoro Technique. Because a Pomodoro its a block of time, and it was made to avoid procrastination. The author also suggests practical ways to deal with interruptions if you have too many.
+
+Javascript doesn't have feature to pause setInterval(), so pause button just save remeaing time and clear interval. 
+
 The first method is a state. It shows is the timer paused, running session time or break time or even has not started running.
 The rest of the methods and properties are speaking for yourselves and I wrote some comments. I hope you quickly understand what for.  
 
-```
+``` javascript
 
 function Pomodoro(timeSession, timeBreak) {
     this.session = timeSession * 60;
@@ -300,4 +308,4 @@ document.body.addEventListener("click", function(e) {
 
 ```
 
-Javascript doesn't have feature to pause setInterval(), so pause button just save remeaing time and clear interval. 
+
